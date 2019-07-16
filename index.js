@@ -33,3 +33,30 @@ getUser(user)
       console.log(followersProfiles)
     })
   })
+
+async function face(emotion) {
+  return new Promise((resolve, reject) => {
+    let emoticon
+    switch (emotion) {
+      case 'happy':
+        emoticon = ':)'
+        break
+      case 'sad':
+        emoticon = ':('
+        break
+      default:
+        emoticon = ':|'
+    }
+    // console.log(`${emoticon} uwot`)
+    resolve(emoticon)
+    reject(console.log('boo'))
+  })
+}
+
+function logIt(string) {
+  console.log(string)
+}
+
+face('happy').then((data) => {
+  logIt(data)
+})
